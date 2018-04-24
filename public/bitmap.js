@@ -35,7 +35,11 @@ Bitmap.prototype.setColor = function(row, col, color) {
     this.grid[row][col] = color;
     this.cells[row][col].style.background = color;
     clientupdates.push([row, col, color]);
-    console.table(clientupdates);
+}
+
+Bitmap.prototype.updateClient = function (row, col, color) {
+    this.grid[row][col] = color;
+    this.cells[row][col].style.background = color;
 }
 
 Bitmap.prototype.handleEvent = function(event) {

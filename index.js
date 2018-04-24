@@ -9,7 +9,11 @@ const updates = [];
 
 // Fill in your request handlers here
 app.post("/updates", (req, res) => {
-    updates.push(...req.body.clientupdates);
+    const newUpdates = req.body.clientupdates.slice(req.body.sequenceNumber);
+    console.log("NewUpdates.length", newUpdates.length);
+    
+    newUpdates.length && updates.push(...newUpdates);
+    // console.log("updates: ", updates);
     res.send({ updates });
 });
 
