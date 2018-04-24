@@ -1,5 +1,4 @@
-const clientupdates = [
-];
+let clientupdates = [];
 
 function Bitmap(width, height) {
     this.grid = [];
